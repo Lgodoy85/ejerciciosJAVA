@@ -1,0 +1,113 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package calculadoraleo;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author pc
+ */
+public class Calculadoraleo {
+
+//creamos dos variables para que luego resuelva la operacion
+public int  suma (int n1 , int n2) {
+            return n1 + n2;
+}
+public int resta (int n1 , int n2) {
+    return n1 - n2 ;
+}
+public int mult (int n1 , int n2) {
+    return n1 * n2 ;
+}
+public int div (int n1 , int n2 ) {
+    return n1 / n2 ;
+}
+
+public static void main(String[] args) {
+
+//igualamos public class con static void
+Calculadoraleo Misca = new Calculadoraleo();
+
+int opcion = 5;
+int n1;
+int n2;
+
+//creamos un scaner con distinto nombre
+Scanner Misc = new Scanner (System.in);
+//Mostramos el menu calculadora
+System.out.println(" Escoga una opcion ");
+System.out.println(" 1 - Suma ");
+System.out.println(" 2 - Resta ");
+System.out.println(" 3 - Multiplicacion ");
+System.out.println(" 4 - Division ");
+System.out.println(" 0 - Salir ");
+opcion = Misc.nextInt();
+
+//creamos un while que sea = a 0 y sale 
+while (opcion !=0) {
+if (opcion==1)
+    {
+//creamos otro escanner con otro nombre
+Scanner Sca = new Scanner (System.in);
+//ahora pedimos que ingrese dos numeros
+System.out.println(" Ingrese el primer numero ");
+n1 = Sca.nextInt();
+System.out.println(" Ingrese el segundo numero ");
+n2 = Sca.nextInt();
+int operacion = Misca.suma(n1,n2);
+System.out.println(" El resultado es : " +operacion );
+break;
+
+    }
+{if (opcion==2) {
+//creamos el segundo scanner con otro nombre
+Scanner Miscan = new Scanner (System.in);  
+System.out.println(" Ingrese el primer numero ");
+n1 = Miscan.nextInt();
+System.out.println(" Ingrese el segundo numero ");
+n2 = Miscan.nextInt();
+int operacion = Misca.resta (n1,n2);
+System.out.println(" El resultado es : " +operacion);
+break;
+
+}
+if (opcion ==3) {
+//creamos el tercer scanner con otro nombre
+Scanner Mica = new Scanner (System.in);
+System.out.println(" Ingrese el primero numero ");
+n1 = Mica.nextInt();
+System.out.println(" Ingrese el segundo numero ");
+n2 = Mica.nextInt();
+int operacion = Misca.mult (n1,n2);
+System.out.println(" El resultado es :  " +operacion);
+break;
+
+}
+if (opcion ==4) {
+//creamos el cuarto scanner con otro nombre
+Scanner Micann = new Scanner (System.in);
+System.out.println(" Ingrese el primero numero ");
+n1 = Micann.nextInt();
+System.out.println(" Ingrese el segundo numero ");
+n2 = Micann.nextInt();
+int operacion = Misca.div (n1,n2);
+System.out.println(" El resultado es :  " +operacion);
+break;
+}
+else { System.out.println(" ' ' ");
+break;
+
+}
+}
+
+    }
+}
+
+    
+
+}
+
