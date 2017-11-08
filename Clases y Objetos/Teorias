@@ -1,2 +1,11 @@
-clases: public static void, mostrar () {} solo se invoca con la clase . ej:mostrar().
+clases: public static void, mostrar () {} solo se invoca con la clase . ej:mostrar().  This no se puede utilizar
+        Mostrar Metodo
+
+Public void Mostrar () {} solo se lo invoca por un objeto o instancia de la clase. ej: clase objeto clase () objeto mostrar(); This se puede utilizar
+       mostra<r instancia
+       
+
+
+
+
 
