@@ -1,4 +1,5 @@
-package ejercicioherencia1;
+package ejercicioherencia;
+
 import java.util.ArrayList;
 
 
@@ -17,20 +18,51 @@ public class Comercio {
 
     public Comercio(String _Dueño) {
         this._Dueño = _Dueño;
-    }
-    
-    public void VenderArticulo (Articulo articulo , int cantidad){
-    
-        this._venta = new ArrayList<>();
-    
+        this._articulo= new ArrayList<Articulo>();
+        this._venta= new ArrayList<Venta>();
     }
    
     
-    public void ComprarArticulos (Articulo articulo , int cantidad ){
+    public String ComprarArticulos (Articulo art , int cantidad ){
+          
+        for (Articulo articulo1 : this._articulo) {
+            if (Articulo.SonIguales(articulo1, art)){
         
-        this._articulo = new ArrayList<>();
-    
+                articulo1.setStock((int) (articulo1.GetStock()+ art.getPrecioVenta()));
+                return "se sumo al stock";          
+        }
+        }
+        art.setPrecioCosto(cantidad);
+        this._articulo.add(art);
+        return "se agrego uno nuevo";
+        
     }
+    
+      public String VenderArticulo (Articulo art1 , int cantidad){
+    
+        for (Articulo articulo1 : this._articulo) {
+            if (Articulo.SonIguales(articulo1, art1)){
+        
+                if (art1.GetStock()>cantidad) {
+                    
+                  Venta NuevaVenta = new Venta(art1, cantidad);
+                  this._venta.add(NuevaVenta);             
+                  articulo1.setStock(art1.GetStock()-cantidad);
+                  
+                    return "pude vender";
+                } 
+                else
+                {
+                    return "no hay stock suficiente";
+                    
+                }
+                    
+                }
+            }
+        return "no tegno producto";
+    }
+      
+      
     
     public void MostrarArticulos (){
     
@@ -53,7 +85,3 @@ public class Comercio {
             
     
     }
-    
-    
-    
-

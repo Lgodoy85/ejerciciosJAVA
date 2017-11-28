@@ -1,45 +1,42 @@
-package ejercicioherencia1;
-
+package ejercicioherencia;
 import jdk.nashorn.internal.codegen.CompilerConstants;
 
 public class Articulo {
  
     private int _codigo;
     private String _nombre;
-    private double _PrecioCosto;
-    private double _PrecioVenta;
+    private float _PrecioCosto;
+    private float _PrecioVenta;
     private int _Stock;
     
-    
-    //el precioventa que se calcula con un 25% de
-    //incremento sobre el precio de costo.   
- 
 
-    public Articulo(int _codigo, String _nombre, double _PrecioCosto,  int _Stock) {
+    public Articulo(int _codigo, String _nombre, float _PrecioCosto,  int _Stock) {
         this._codigo = _codigo;
         this._nombre = _nombre;
         this._PrecioCosto = _PrecioCosto;
-        this._PrecioVenta= _PrecioCosto*1.25;
+        this._PrecioVenta= (float) _PrecioCosto * (float) 1.25;
         this._Stock = _Stock;
     }
     
-    public String GetNombre()//devuelve el nombre del articulo
-    {
-        String retorno=this._nombre;
-        
-        return retorno;
-    }
+    public int GetStock (){
     
-    public int getCodigo() {
-        return _codigo;
+        return this._Stock;
+    
     }
+         
+    public String GetNombreyGetCodigo()//devuelve el nombre del articulo
+    {
+        
+        return this._nombre+this._codigo;
+      
+    }  
 
     public double getPrecioVenta() {
         return _PrecioVenta;
     }
 
-    public void setPrecioCosto(int _PrecioCosto) {
-        this._PrecioCosto = _PrecioCosto;
+    public void setPrecioCosto(float PrecioCosto) {
+        this._PrecioCosto = PrecioCosto;
     }
 
     public void setStock(int _Stock) {
@@ -51,38 +48,52 @@ public class Articulo {
     }
  
     
-    public boolean Haystock (String nombre, int sto){
+    public boolean Haystock (){
+        
+////si hay stock return true sino false
+//ejemplo 1 de retornar un stock
+//        if (this._Stock <= 1) {
+// 
+//        return false;
+//            
+//        }
+// 
+//        return true;
+//        
+//        }
 
-        boolean retorno = false;
-        if (nombre.equalsIgnoreCase(this._nombre) && this._Stock <= sto) {
- 
-            return retorno = true;
- 
-        } else {
- 
-            System.err.println("Error. Quedan " + this._Stock + " unidades");
- 
-            return retorno = false;
-        }
-    }
+
+//ejemplo 2 de retornar un stock
+
+       boolean retorno = false;
+
+       if (this._Stock>0){
+
+       return true; }
+
+       return retorno;
+   
+       }
+
+//forma 3 de return un stock
+//{    return (this._Stock>0);
+//            
+//            }
+    
+    
     
      public static boolean SonIguales(Articulo uno, Articulo dos) //verifica si dos articulos son iguales, 
     {   boolean retorno=false;
     
-        if (uno._nombre.equalsIgnoreCase(dos._nombre) && (uno._codigo==dos._codigo)) 
+        if (uno.GetNombreyGetCodigo().equalsIgnoreCase(dos.GetNombreyGetCodigo()))
         {
-            return retorno = true;
-        }else
-        {
-            return retorno=false;
-            
+            retorno = true;
         }
         
+        return retorno;
         
-
-        
-     }
      
+     }
      public void MostrarArticulo (){
      
          StringBuilder Mostrar = new StringBuilder();
@@ -93,11 +104,7 @@ public class Articulo {
          Mostrar.append("Stock  : "+this._Stock);
      
      }
+ 
     }
     
     
-    
-    
-
-     
-
