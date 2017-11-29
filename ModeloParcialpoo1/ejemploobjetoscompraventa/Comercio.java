@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package ejemploobjetoscompraventa;
 
 import java.util.ArrayList;
@@ -27,20 +22,45 @@ public class Comercio {
     }
     /*
     venderArticulo (artículo , cantidad)
-mostrarArticulos
-MostrarVentas
-comprarArticulo(artículo , cantidad)
+    mostrarArticulos
+    MostrarVentas
+    comprarArticulo(artículo , cantidad)
     */
     
     
     public void mostrarArticulos()
     {
+        for (articulo aux : _misArticulos) {
+            
+            aux.MostrarArticulo();
+                   
+        }
+   
+    }
+   public void MostrarVentas(){
+   
+       for (Venta miventa : _misVentas) {
+           
+           miventa.MostrarVenta();   
+       }
+   }    
+   
+   public void MostrarGanancias(){
+   
+       {   
+        float gananciaTotal=0;
+        
+        for (Venta aux : _misVentas) {
+            
+            gananciaTotal=gananciaTotal+aux.RetornarGanacia();
+            aux.MostrarVenta();
+        }
+        System.out.println("Ganancia: "+gananciaTotal);
         
     }
-    public void mostrarVentas()
-    {
-        
-    }
+       
+   
+   }
     
      public String ComprarArticulo(articulo art , int cantidad)
      {     

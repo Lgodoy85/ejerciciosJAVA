@@ -1,14 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package ejemploobjetoscompraventa;
 
-/**
- *
- * @author alumno
- */
 public class articulo {
     private int _codigo;
     private String _nombre;
@@ -50,10 +41,15 @@ public class articulo {
         return(this._stock>0);
     }     
     
-    public void MostrarArticulo()
+     public void MostrarArticulo()//muestra el articulo
     {
-        System.out.println("todos los datos");
-      
+        System.out.println("Nombre: "+this._nombre);
+        System.out.println("Codigo de Barra: "+this._codigo);
+        System.out.println("Cantidad disponible: "+this._stock);
+        System.out.println("Precio Costo: "+this._precioCosto+"$.");
+        System.out.println("Precio de venta: "+this._precioVenta+"$.");
+        
+        
     }
     
     public static boolean SonIguales(articulo uno , articulo dos)
@@ -101,7 +97,6 @@ public class articulo {
     }
     
     /*
-
 Constructor que reciba todos los atributos por parámetros 
  menos el precio venta que se
 calcula con un 25% de incremento sobre el precio de costo.

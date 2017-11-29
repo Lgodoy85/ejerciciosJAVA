@@ -1,16 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package ejemploobjetoscompraventa;
 
-import java.util.Date;
-
-/**
- *
- * @author alumno
- */
 public class EjemploObjetosCompraVenta {
 
     /**
@@ -19,7 +8,8 @@ public class EjemploObjetosCompraVenta {
     public static void main(String[] args) {
       articulo  miarticulo ;
       miarticulo = new articulo( 666,"fanta",100,3);
-     
+      miarticulo.MostrarArticulo();
+      
       
       articulo  miarticulo2 ;
       miarticulo2 = new articulo( 555,"sprite",80,5);
@@ -29,7 +19,8 @@ public class EjemploObjetosCompraVenta {
       
       Comercio ElBolicheDeTony;
       ElBolicheDeTony = new Comercio("tony");
-      
+      ElBolicheDeTony.MostrarVentas();
+      ElBolicheDeTony.MostrarGanancias();
       
       
       String respuesta;
