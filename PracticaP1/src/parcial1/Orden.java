@@ -35,33 +35,18 @@ public void setEnvio (Date envio){
 
 public float CalcularTotalOrden(){
 
-    int cantidadNotebook=0;
-    float precioUnitario=0;
-    float precioTotal = 0;
-    float total;
+    float total=0;
    
-    for (DetalleOrden item : items) {
-      
-    System.out.println("Ingrese la cantidad de notebook :"+cantidadNotebook++);
-
+    for (int i = 0; i < this.items.size(); i++) {
+        for (int j = 0; j < items.get(i).getCantidad(); j++) {
+            
+            total+=this.items.get(i).getPrecioUnitario();
+            
+        }
     }
-    precioUnitario=cantidadNotebook*this.getNroItems();
-     
-    return total=precioTotal*precioUnitario;
-
-    }
-
-
-public void MostrartotalOrden (){
-
-    StringBuilder aux = new StringBuilder();
-    aux.append("total de orden" +this.CalcularTotalOrden());
-    
-    for (DetalleOrden item : items) {
-    System.out.println(item.toString());
-     
+    return total;
         
     }
 }
 
-}
+
